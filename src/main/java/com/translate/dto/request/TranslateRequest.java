@@ -12,5 +12,9 @@ public class TranslateRequest {
 
     @Getter
     @Setter
-    private Language language;
+    private Language languageFrom;
+
+    @Getter
+    @Setter
+    private Language languageTo;
 }

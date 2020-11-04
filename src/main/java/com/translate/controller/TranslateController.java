@@ -19,10 +19,10 @@ public class TranslateController {
     @Autowired
     private GoogleService googleService;
 
-    @PostMapping("/vi")
+    @PostMapping("/")
     @ApiOperation(value = "Dich")
     public GResponse translate(@RequestBody GRequest<TranslateRequest> data) {
-        return GResponse.build().data(googleService.translateVI(data.getData().getInput(), data.getData().getLanguage()));
+        return GResponse.build().data(googleService.translate(data.getData().getInput(), data.getData().getLanguageFrom(), data.getData().getLanguageTo()));
     }
 
     @GetMapping("/language")
