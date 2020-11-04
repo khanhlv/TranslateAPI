@@ -5,6 +5,7 @@ import com.translate.dto.GResponse;
 import com.translate.dto.enums.Language;
 import com.translate.dto.request.TranslateRequest;
 import com.translate.service.GoogleService;
+import com.translate.service.TranslateService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,12 +18,12 @@ import org.springframework.web.bind.annotation.*;
 public class TranslateController {
 
     @Autowired
-    private GoogleService googleService;
+    private TranslateService translateService;
 
     @PostMapping("/")
     @ApiOperation(value = "Dich")
     public GResponse translate(@RequestBody GRequest<TranslateRequest> data) {
-        return GResponse.build().data(googleService.translate(data.getData().getInput(), data.getData().getLanguageFrom(), data.getData().getLanguageTo()));
+        return GResponse.build().data(translateService.translate(data.getData().getInput(), data.getData().getLanguageFrom(), data.getData().getLanguageTo()));
     }
 
     @GetMapping("/language")

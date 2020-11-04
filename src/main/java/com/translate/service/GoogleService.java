@@ -18,7 +18,7 @@ public class GoogleService {
 
     public String translate(String input, Language languageFrom, Language languageTo) {
 
-        String data = "translate,sl:%s,tl:$s,st:%s,id:%d,qc:true,ac:true,_id:tw-async-translate,_pms:s,_fmt:pc";
+        String data = "translate,sl:%s,tl:%s,st:%s,id:%d,qc:true,ac:true,_id:tw-async-translate,_pms:s,_fmt:pc";
 
         try {
             Document document = Jsoup.connect("https://www.google.com.vn/async/translate?yv=3")

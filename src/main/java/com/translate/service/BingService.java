@@ -68,8 +68,4 @@ public class BingService {
 
         return StringUtils.EMPTY;
     }
-
-    public static void main(String[] args) {
-        System.out.println(new BingService().translate("data", Language.ENGLISH, Language.VIETNAMESE));
-    }
 }
