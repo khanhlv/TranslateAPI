@@ -25,7 +25,7 @@ public class CustomizedExceptionHandler {
     }
 
     @ExceptionHandler(SystemException.class)
-    public final GResponse handleException(SystemException ex, WebRequest request) {
+    public final GResponse handleSystemException(SystemException ex, WebRequest request) {
 
         ErrorResponse errorResponse = new ErrorResponse();
         errorResponse.setTimestamp(new Date().getTime());
@@ -35,4 +35,14 @@ public class CustomizedExceptionHandler {
         return GResponse.build().error(errorResponse);
     }
 
+    @ExceptionHandler(Exception.class)
+    public final GResponse handleException(Exception ex, WebRequest request) {
+
+        ErrorResponse errorResponse = new ErrorResponse();
+        errorResponse.setTimestamp(new Date().getTime());
+        errorResponse.setMessage(ex.getMessage());
+        errorResponse.setCode(99);
+
+        return GResponse.build().error(errorResponse);
+    }
 }
