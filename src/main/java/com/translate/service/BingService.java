@@ -62,7 +62,7 @@ public class BingService {
 
             return StringUtils.trim((String)mapDataList.get("text"));
 
-        } catch (IOException ex) {
+        } catch (Exception ex) {
             log.error("BingService", ex);
         }
 

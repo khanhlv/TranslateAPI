@@ -29,7 +29,7 @@ public class GoogleService {
 
             return StringUtils.trim(document.select("span#tw-answ-target-text").text());
 
-        } catch (IOException ex) {
+        } catch (Exception ex) {
             log.error("GoogleService", ex);
         }
 
