@@ -1,21 +1,17 @@
 package com.translate.service;
 
-import java.io.IOException;
-import java.net.URLEncoder;
-import java.util.Date;
-import java.util.List;
-import java.util.Map;
-
-import org.apache.commons.lang3.StringUtils;
-import org.jsoup.Connection;
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.springframework.stereotype.Service;
-
 import com.google.gson.Gson;
 import com.translate.common.UserAgent;
 import com.translate.dto.enums.Language;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
+import org.jsoup.Connection;
+import org.jsoup.Jsoup;
+import org.springframework.stereotype.Service;
+
+import java.net.URLEncoder;
+import java.util.List;
+import java.util.Map;
 
 @Service
 @Slf4j
